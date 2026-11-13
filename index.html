@@ -81,6 +81,8 @@
   }
 
   .bottom { border-top: 1px solid var(--line); }
+  .role { text-align: right; }
+  @media (max-width: 520px) { .role { max-width: 52%; line-height: 1.35; } }
 
   /* cursor */
   .cursor { position: fixed; top: 0; left: 0; z-index: 99; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--accent);
@@ -108,7 +110,7 @@
 <div class="page">
   <header class="bar">
     <a class="logo" href="./">Fadi Awwad<sup>®</sup></a>
-    <span>Creative Director — UI/UX<span class="muted hide-sm"> · Toronto</span></span>
+    <span class="role">Creative Director — Brand, Digital and UI/UX</span>
   </header>
 
   <main class="main">
@@ -140,7 +142,6 @@
 
   <footer class="bar bottom">
     <span class="muted">© 2026 Fadi Awwad</span>
-    <span class="muted">Toronto <span data-clock></span></span>
   </footer>
 </div>
 
@@ -166,12 +167,7 @@
       c.classList.toggle('is-link', !!e.target.closest('a'));
     });
   })();
-  // Toronto clock
-  (() => {
-    const el = document.querySelector('[data-clock]');
-    const tick = () => { try { el.textContent = '· ' + new Date().toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Toronto' }); } catch (e) {} };
-    tick(); setInterval(tick, 30000);
-  })();
+
 </script>
 </body>
 </html>
